@@ -60,6 +60,16 @@
 
   
   <button type="submit" class="btn blue" id="clickButton">Submit</button>
+
+  <h1>Which beer? </h1>
+        <div class="form-group">
+     <label for="which">city/state?</label>
+    <input type="text" class="form-control" id="whichInput" aria-describedby="whichHelp" placeholder="which">
+  </div>
+
+  <button type="submit" class="btn blue" id="clickclickButton">Submit</button>
+
+
         <div>
           <input id="show-listings" type="button" value="Show Listings">
           <input id="hide-listings" type="button" value="Hide Listings">
@@ -84,26 +94,43 @@
  var where = "";
  var cityState = "";
 
- $("#clickButton").on("click", function(){
+  $("#clickButton").on("click", function(){
    where = $("#whereInput").val().trim();
    cityState = $("#cityStateInput").val().trim();
-   
+   var queryURL = "https://crossorigin.me/http://api.brewerydb.com/v2/locations/?key=df96c11767682fe9178fde3cedaa19f3&" + cityState + "=" + where
    console.log("where " + where)
   database.ref().push({
       where: where,
       cityState: cityState,
+      queryURL: queryURL,
+      dateAdded: firebase.database.ServerValue.TIMESTAMP
+    });
+  return false;
+  });
+
+// this need tio return a brewery not a beer.... there doesn't seem to be a way to link a particular beer to a brewery....annoyingly
+   $("#clickclickButton").on("click", function(){
+   which = $("#whichInput").val().trim();
+  var queryURL = "https://crossorigin.me/http://api.brewerydb.com/v2/beers/?key=df96c11767682fe9178fde3cedaa19f3&name=" + which
+   console.log(queryURL)
+   $.ajax({url: queryURL, method: 'GET'}).done(function(response){
+    var id = response.data[0].id;
+    console.log(id)
+    var queryURL = "https://crossorigin.me/http://api.brewerydb.com/v2/breweries/?key=df96c11767682fe9178fde3cedaa19f3&" + id
+   });
+  database.ref().push({
+      which: which,
+      queryURL: queryURL,
 
       dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
   return false;
   });
  database.ref().on("child_added", function(childSnapshot) {
-  console.log(childSnapshot.val().where);
-  console.log(childSnapshot.val().cityState)
+  console.log(childSnapshot.val().queryURL);
+ 
 
-  var where = (childSnapshot.val().where) ;
-  var cityState = (childSnapshot.val().cityState)
-       var queryURL = "https://crossorigin.me/http://api.brewerydb.com/v2/locations/?key=df96c11767682fe9178fde3cedaa19f3&" + cityState + "=" + where
+  var queryURL =    (childSnapshot.val().queryURL);
       var map;
       // Create a new blank array for all the listing markers.
       var markers = [];
@@ -143,10 +170,10 @@
 
         var largeInfowindow = new google.maps.InfoWindow();
         // Style the markers a bit. This will be our listing marker icon.
-        var defaultIcon = ("https://github.com/bernerd252/secretbeer/blob/master/images/beerBottle.gif")
+        var defaultIcon = ("https://raw.githubusercontent.com/bernerd252/secretbeer/master/images/beerBottle.gif")
         // Create a "highlighted location" marker color for when the user
         // mouses over the marker.
-        // 
+        var highlightedIcon = ("images/beerBottleHover.png")
         var largeInfowindow = new google.maps.InfoWindow();
         // The following group uses the location array to create an array of markers on initialize.
         for (var i = 0; i < lats.length; i++) {
