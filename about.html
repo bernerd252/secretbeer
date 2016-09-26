@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>About Hoplivion</title>
+	<!-- reset link -->
+	<link rel="stylesheet" href="">
+	<!-- style link -->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- jquery -->
+	<script   src="https://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>
+	<!-- materialize -->
+	<!-- Compiled and minified CSS -->
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+	<!-- viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<!-- font  -->
+	<link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Tangerine|Modak|Sigmar One">
+    </head>
+<body>
+
+
+	<nav class="card-panel teal transparent header">
+	    <div class="nav-wrapper" id="headwraper">
+	      <a href="#" class="brand-logo hop">HoPLIVIoN
+	     </a>
+	      <ul id="nav-mobile" class="right hide-on-med-and-down">
+	        <li><a href="sass.html">About</a></li>
+	        <li><a href="badges.html">Contact Us!</a></li>
+	      </ul>
+	    </div>
+	</nav>
+	<div class="container">
+		<div class="carousel">
+		    <a class="carousel-item" href="#one!" id="fausto"><img src="images/fausto.jpg"></a>
+		    <a class="carousel-item" href="#two!" id="law"><img src="images/law.jpg"></a>
+		    <a class="carousel-item" href="#three!" id="ed"><img src="images/ed.jpg"></a>
+		</div><br>
+	  	<div class="row" id="map">
+	  		
+	  	</div>
+	
+		<div class="row">
+	        <div class="col s12 m6">
+	          	<div class="card blue-grey darken-1">
+		            <div class="card-content white-text">
+		              <span class="card-title" id="cardTitle">About the creators</span>
+		              <p id="cardInfo">Click on an image above for additional information about our creative crew!</p>
+		       		</div>
+	          	<div class="card-action" id="cardLink">
+	              
+	        </div>
+          </div>
+        </div>
+
+        <div class="row">
+	        <div class="col s12 m6">
+	          	<div class="card grey darken-1">
+		            <div class="card-content white-text">
+		              <span class="card-title">About Hoplivion</span>
+		              <p>Hoplivion was created in order to pass a coding class while simultaneously getting crunk!</p>
+		       		</div>
+	          	<div class="card-action">
+	              <a href="#">Hoplivion Home</a>
+	        </div>
+          </div>
+        </div>
+
+      </div>
+			
+			<div class="row">
+			  	<form class="col s12">
+	      		<!-- <div class="row"> -->
+	        		<div class="input-field col s12">
+			          <textarea id="textarea1" class="materialize-textarea"></textarea>
+			          <label for="textarea1" class="coment">Comments:</label>
+			        </div>
+			    <!-- </div> -->
+			    </form>
+			</div>
+		
+	</div>
+
+	
+
+
+<script type="text/javascript">
+	//jquery
+ $(document).ready(function(){
+ 	   $('select').material_select();
+ 	   $('.carousel').carousel();
+ 	//carousel nexts and previous movement methods.
+     /*$('.carousel.carousel-slider').carousel({full_width: true});*/
+    // Next slide
+	$('.carousel').carousel('next');
+	$('.carousel').carousel('next', 3); // Move next n times.
+	// Previous slide
+	$('.carousel').carousel('prev');
+	$('.carousel').carousel('prev', 4); // Move prev n times.
+	// Set to nth slide
+	$('.carousel').carousel('set', 4);
+        
+        });
+/*api keys AIzaSyBwEmSt21V19fqZZy03zjA1SXF5Ub3zT8g*/
+	$("#fausto").on('click', function() {
+		$("#cardTitle").html("Fausto Brito");
+		$("#cardInfo").html("Fausto Brito is the coolest guy ever!");
+		$("#cardLink").html('<a href="https://github.com/g2dog79" target="_blank">Fausto Brito on GitHub</a>');
+	});
+	$("#law").on('click', function() {
+		$("#cardTitle").html("Lawrence Lau");
+		$("#cardInfo").html("Lawrence Lau is sick of allergies. This image is not of Lawrence Lau!");
+		$("#cardLink").html('<a href="https://github.com/lawrencelau125" target="_blank">Lawrence Lau on GitHub</a>');
+	});
+	$("#ed").on('click', function() {
+		$("#cardTitle").html("Edouard Batlle");
+		$("#cardInfo").html("Edouard is a fine gent with impeccable taste in visual art.");
+		$("#cardLink").html('<a href="https://github.com/bernerd252" target="_blank">Edouard Batlle on GitHub</a>');
+	});
+</script>
+	
+</body>
+</html>

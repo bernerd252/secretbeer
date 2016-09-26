@@ -1,88 +1,19 @@
-Skip to
-<!DOCTYPE html>
-<html>
-  <head>
-    <style>
-      html,
-      body {
-        font-family: Arial, sans-serif;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      .container {
-        height: 100%;
-        position: relative;
-      }
-      input {
-        font-size: 12px;
-      }
-      h1 {
-        color: #525454;
-        font-size: 22px;
-        margin: 0 0 10px 0;
-        text-align: center;
-      }
-      #hide-listings,
-      #show-listings {
-        width: 48%;
-      }
-      #map {
-        bottom:0px;
-        height: 100%;
-        left: 362px;
-        position: absolute;
-        right: 0px;
-      }
-      .options-box {
-        background: #fff;
-        border: 1px solid #999;
-        border-radius: 3px;
-        height: 100%;
-        line-height: 35px;
-        padding: 10px 10px 30px 10px;
-        text-align: left;
-        width: 340px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="options-box">
-        <h1>Find Your Local Brewery! Chug chug! </h1>
-        <div class="form-group">
-     <label for="cityState">city/state?</label>
-    <input type="text" class="form-control" id="cityStateInput" aria-describedby="cityStateHelp" placeholder="cityState">
-  </div>
-  <div class="form-group">
-     <label for="where">where</label>
-    <input type="text" class="form-control" id="whereInput" aria-describedby="whereHelp" placeholder="where">
-  </div>
+$(document).ready(function(){
+ 	   $('select').material_select();
+ 	   $('.carousel').carousel();
+ 	//carousel nexts and previous movement methods.
+     /*$('.carousel.carousel-slider').carousel({full_width: true});*/
 
-  
-  <button type="submit" class="btn blue" id="clickButton">Submit</button>
-
-  <h1>Which beer? </h1>
-        <div class="form-group">
-     <label for="which">city/state?</label>
-    <input type="text" class="form-control" id="whichInput" aria-describedby="whichHelp" placeholder="which">
-  </div>
-
-  <button type="submit" class="btn blue" id="clickclickButton">Submit</button>
-
-
-        <div>
-          <input id="show-listings" type="button" value="Show Listings">
-          <input id="hide-listings" type="button" value="Hide Listings">
-        </div>
-      </div>
-      <div id="map"></div>
-    </div>
-    <script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
-    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
+    // Next slide
+	$('.carousel').carousel('next');
+	$('.carousel').carousel('next', 3); // Move next n times.
+	// Previous slide
+	$('.carousel').carousel('prev');
+	$('.carousel').carousel('prev', 4); // Move prev n times.
+	// Set to nth slide
+	$('.carousel').carousel('set', 4);
+	//firebase data
+	 var config = {
     apiKey: "AIzaSyBTKzJTmrtTbwJeS_V4sryVrYfHS1gIpP4",
     authDomain: "beer-d9b34.firebaseapp.com",
     databaseURL: "https://beer-d9b34.firebaseio.com",
@@ -90,7 +21,8 @@ Skip to
     messagingSenderId: "773517315986"
   };
   firebase.initializeApp(config);
- var database = firebase.database();
+
+   var database = firebase.database();
  var where = "";
  var cityState = "";
   $("#clickButton").on("click", function(){
@@ -252,17 +184,11 @@ Skip to
       //   return markerImage;
       // }
   //  
-    
-    </script>
-    <script async defer
-        src=
-        "https://maps.googleapis.com/maps/api/js?key=AIzaSyB1s453lujqTAq1cwYfuPEH4dW8P4JDnoc">
-    </script>
-});
 
-  </script>
-  </body>
-  </html>
-
-Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help
+//
+	
+
+
+
+        
+        });

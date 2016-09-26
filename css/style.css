@@ -1,0 +1,76 @@
+body {
+	width: 100%;
+	height: 100%;
+	background-image: url(http://wallpaper.zone/img/36519.jpg);
+}
+
+ #map {
+        width: 100%;
+        height: 400px;
+        /*background-color: grey;*/
+}
+
+h4 {
+	font-family: Sigmar One;
+	color: #471f0a;
+}
+  /*#map {
+    bottom:0px;
+    height: 100%;
+    left: 362px;
+    position: absolute;
+    right: 0px;
+}*/
+
+.card-panel {
+	background-image: url(http://en.academic.ru/pictures/enwiki/50/2009-03-21_Beer_brewing_bubbles.jpg);
+	font-family: Sigmar One;
+	height: 100px;
+}
+
+
+#nav-mobile {
+	color: #471f0a;
+
+}
+
+#headwraper {
+
+}
+
+.carousel {
+	background-image: url(http://wallpapers-and-backgrounds.net/wp-content/uploads/2016/03/beer-background_1_960x540.jpg);
+	width: 100%;
+	height: 100%;
+	/*border-style: inset;
+	border-color: #eeb33b;
+	border-width: 10px;*/
+}
+
+#comment {
+	font-family: Sigmar One;
+	color: #471f0a;
+	font-size: 30px;
+	/*text-shadow: 4px 4px 4px #aaa;*/
+}
+
+.submit {
+	color: #632e0c;
+}
+
+#textarea2 {
+	color: #471f0a;
+	font-size: 20px;
+	/*text-shadow: 4px 4px 4px #aaa;*/
+
+
+}
+
+.img {
+	/*height: 300px;*/
+}
+
+
+.closeicon {
+
+}
