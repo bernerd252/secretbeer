@@ -49,50 +49,32 @@
 		</div> 
 		<!-- First Input Fields -->
 		<div class="row">
-			<div class="col s6">
-				<label><h4>By Region</h4></label>
-			</div>
-			<div class="col s6">
-				<label><h4>By City</h4></label>
-			</div>
-		</div> <!-- End of First Input fields -->
-		<div class="row"><!-- Start Second input Field -->
-			<div class="input-field col s6">
-			    <nav>
-			    <div class="nav-wrapper">
-			      <form>
-			        <div class="input-field byregion">
-			          <input id="regioninput" type="search" required class="yellow">
-			          <label for="search"><i class="material-icons">search</i></label>
-			          <i class="material-icons">close</i>
-			        </div>
-			      </form>
-			    </div>
-			  	</nav>
-		  	</div>
-			<div class="input-field col s6">
-	          	<nav>
-			    <div class="nav-wrapper">
-			      <form>
-			        <div class="input-field bycity">
-			          <input id="cityinput" type="search" required class="yellow">
-			          <label for="search"><i class="material-icons">search</i></label>
-			          <i class="material-icons">close</i>
-			        </div>
-			      </form>
-			    </div>
-			  	</nav>
+			<div class="form-group">
+           <label for="cityState">city/state?</label>
+          <input type="text" class="form-control" id="cityStateInput" aria-describedby="cityStateHelp" placeholder="cityState">
+        </div>
+        <div class="form-group">
+           <label for="where">where</label>
+          <input type="text" class="form-control" id="whereInput" aria-describedby="whereHelp" placeholder="where">
+        </div>
 
-	        </div>
-	     </div><!-- End of Second Input Row -->
-	        <div class="row"><!-- Submit Button -->
-	        	<div class="col">
-		        	<button class="btn waves-effect waves-light amber accent-4 submit" type="submit" name="action">Submit
-						<i class="material-icons right">send</i>
-					</button>
-				</div>
-	        </div><!-- End Submit Button -->
-	   
+  
+  <button type="submit" class="btn blue" id="clickButton">Submit</button>
+
+  
+
+
+        <div>
+          <input id="show-listings" type="button" value="Show Listings">
+          <input id="hide-listings" type="button" value="Hide Listings">
+        </div>
+      </div>
+	       
+	   		<!-- <div>
+          <input id="show-listings" type="button" value="Show Listings">
+          <input id="hide-listings" type="button" value="Hide Listings">
+        </div> -->
+      </div>
 
 			<div class="row">
 			  	<!-- <form class="col s12"> -->
@@ -120,7 +102,7 @@
  -->
  <script async defer
         src=
-        "https://maps.googleapis.com/maps/api/js?key=AIzaSyAF1z4D8_qAlnNA6PDoT8UrYOjhajWyP1Y&callback=initMap">
+        "https://maps.googleapis.com/maps/api/js?key=AIzaSyAF1z4D8_qAlnNA6PDoT8UrYOjhajWyP1Y">
     </script>
 
 	

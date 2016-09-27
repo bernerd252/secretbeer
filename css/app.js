@@ -20,11 +20,14 @@ $(document).ready(function(){
     storageBucket: "",
     messagingSenderId: "773517315986"
   };
+  // initialize firebase
   firebase.initializeApp(config);
 
    var database = firebase.database();
  var where = "";
  var cityState = "";
+
+ // what happens when you click on the submit button
   $("#clickButton").on("click", function(){
    where = $("#whereInput").val().trim();
    cityState = $("#cityStateInput").val().trim();
@@ -39,22 +42,24 @@ $(document).ready(function(){
   return false;
   });
 // this need tio return a brewery not a beer.... there doesn't seem to be a way to link a particular beer to a brewery....annoyingly
-   $("#clickclickButton").on("click", function(){
-   which = $("#whichInput").val().trim();
-  var queryURL = "https://crossorigin.me/http://api.brewerydb.com/v2/beers/?key=df96c11767682fe9178fde3cedaa19f3&name=" + which
-   console.log(queryURL)
-   $.ajax({url: queryURL, method: 'GET'}).done(function(response){
-    var id = response.data[0].id;
-    console.log(id)
-    var queryURL = "https://crossorigin.me/http://api.brewerydb.com/v2/breweries/?key=df96c11767682fe9178fde3cedaa19f3&" + id
-   });
-  database.ref().push({
-      which: which,
-      queryURL: queryURL,
-      dateAdded: firebase.database.ServerValue.TIMESTAMP
-    });
-  return false;
-  });
+  //  $("#clickclickButton").on("click", function(){
+  //  which = $("#whichInput").val().trim();
+  // var queryURL = "https://crossorigin.me/http://api.brewerydb.com/v2/beers/?key=df96c11767682fe9178fde3cedaa19f3&name=" + which
+  //  console.log(queryURL)
+  //  $.ajax({url: queryURL, method: 'GET'}).done(function(response){
+  //   var id = response.data[0].id;
+  //   console.log(id)
+  //   var queryURL = "https://crossorigin.me/http://api.brewerydb.com/v2/breweries/?key=df96c11767682fe9178fde3cedaa19f3&" + id
+  //  });
+  // database.ref().push({
+  //     which: which,
+  //     queryURL: queryURL,
+  //     dateAdded: firebase.database.ServerValue.TIMESTAMP
+  //   });
+  // return false;
+  // });
+
+
  database.ref().on("child_added", function(childSnapshot) {
   console.log(childSnapshot.val().queryURL);
  
@@ -108,6 +113,14 @@ $(document).ready(function(){
           console.log("lngParse " + lngParse)
           var title = response.data[i].brewery.name;
           console.log(location)
+          var description = response.data[i].brewery.description;
+          console.log("description" + description)
+          var streetAddress = response.data[i].streetAddress
+          console.log("street " + streetAddress)
+          var locality = response.data[i].locality
+          var website = response.data[i].brewery.website;
+          // var label = response.data[i].labels.icon;
+          console.log(website)
       
       // change latParse and lngParse into latitude and longitude cocordinates that google maps can understand
          var position = new google.maps.LatLng(latParse,lngParse);
@@ -118,7 +131,14 @@ $(document).ready(function(){
             title: title,
             animation: google.maps.Animation.DROP,
             icon: defaultIcon,
-            id: i
+            id: i,
+            streetAddress: streetAddress,
+            locality: locality,
+            website: website,
+            description: description
+            // label: label
+
+            // streetAddress: streetAddress
           });
           // Push the marker to our array of markers.
           markers.push(marker);
@@ -143,7 +163,7 @@ $(document).ready(function(){
         // Check to make sure the infowindow is not already opened on this marker.
         if (infowindow.marker != marker) {
           infowindow.marker = marker;
-          infowindow.setContent('<div>' + marker.title + '</div>');
+          infowindow.setContent('<div><h5>' + marker.title + '</h5><br>' + marker.streetAddress + '<br>' + marker.locality + '<br>' + marker.description + '<br><a href=' + marker.website + ' target=blank>' + marker.website + '</a></div>');
           infowindow.open(map, marker);
           // Make sure the marker property is cleared if the infowindow is closed.
           infowindow.addListener('closeclick', function() {
