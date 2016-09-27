@@ -44,33 +44,54 @@
 		    <a class="carousel-item" href="#four!"><img class="img" src="http://worldartsme.com/images/blue-moon-beer-clipart-1.jpg"></a>
 		    <a class="carousel-item" href="#five!"><img class="img" src="http://www.brauunion.at/images/resized/assets/fileupload/biersorten/heineken%2Bglas_03_196x400.png"></a>
 	  	</div><br>
+	</div>
 		<div id="map">
 			<!-- this is where the map gets dumped -->
 		</div> 
+	<div class="container">
+
 		<!-- First Input Fields -->
 		<div class="row">
-			<div class="form-group">
-           <label for="cityState">city/state?</label>
-          <input type="text" class="form-control" id="cityStateInput" aria-describedby="cityStateHelp" placeholder="cityState">
-        </div>
-        <div class="form-group">
-           <label for="where">where</label>
-          <input type="text" class="form-control" id="whereInput" aria-describedby="whereHelp" placeholder="where">
-        </div>
+		<div class="col s6">
+		   <label><h4>Select Bro!!</h4></label>
+		</div>
+			<div class="col s6">
+				<label><h4>By City</h4></label>
+			</div>
+		</div> <!-- End of First Input fields -->
+		<div class="row"><!-- Start Second input Field -->
+			<div class="input-field col s6">
+			   	<select>
+			      <option value="" disabled selected>Options</option>
+			      <option value="1" id="region">By Region</option>
+			      <option value="2" id="city">By City</option>
+			      <option value="3" id="brand">By Brand</option>
+			    </select>
+		  	</div>
+			<div class="input-field col s6">
+	          	<nav>
+			    <div class="nav-wrapper">
+			      <form>
+			        <div class="input-field bycity">
+			          <input id="cityinput" type="search" required class="yellow">
+			          <label for="search"><i class="material-icons">search</i></label>
+			          <i class="material-icons">close</i>
+			        </div>
+			      </form>
+			    </div>
+			  	</nav>
 
-  
-  <button type="submit" class="btn blue" id="clickButton">Submit</button>
-
-  
-
-
-        <div>
-          <input id="show-listings" type="button" value="Show Listings">
-          <input id="hide-listings" type="button" value="Hide Listings">
-        </div>
-      </div>
-	       
-	   		<footer class="page-footer">
+	        </div>
+	     </div><!-- End of Second Input Row -->
+	        <div class="row"><!-- Submit Button -->
+	        	<div class="col">
+		        	<button class="btn waves-effect waves-light amber accent-4 submit" type="submit" name="action">Submit
+						<i class="material-icons right">send</i>
+					</button>
+				</div>
+	        </div><!-- End Submit Button -->
+		</div><!-- End of Container -->
+<footer class="page-footer">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
@@ -94,13 +115,13 @@
             </div>
           </div>
         </footer>
-		</div><!-- End of Container -->
-
+            
+		
 
 	
 
 <!-- Javascript -->
-<script src="css/app.js"></script>
+<script src="css/app2.js"></script>
 
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
 <!-- google api -->

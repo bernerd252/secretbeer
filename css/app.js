@@ -119,8 +119,8 @@ $(document).ready(function(){
           console.log("street " + streetAddress)
           var locality = response.data[i].locality
           var website = response.data[i].brewery.website;
-          // var label = response.data[i].labels.icon;
-          console.log(website)
+          var label = response.data[i].brewery.images.icon;
+          console.log(label)
       
       // change latParse and lngParse into latitude and longitude cocordinates that google maps can understand
          var position = new google.maps.LatLng(latParse,lngParse);
@@ -135,8 +135,8 @@ $(document).ready(function(){
             streetAddress: streetAddress,
             locality: locality,
             website: website,
-            description: description
-            // label: label
+            description: description,
+            label: label
 
             // streetAddress: streetAddress
           });
@@ -163,7 +163,7 @@ $(document).ready(function(){
         // Check to make sure the infowindow is not already opened on this marker.
         if (infowindow.marker != marker) {
           infowindow.marker = marker;
-          infowindow.setContent('<div><h5>' + marker.title + '</h5><br>' + marker.streetAddress + '<br>' + marker.locality + '<br>' + marker.description + '<br><a href=' + marker.website + ' target=blank>' + marker.website + '</a></div>');
+          infowindow.setContent('<div><h5>' + marker.title + '</h5><br>' + marker.streetAddress + '<img src ="' + marker.label + '" class=icon></img><br>' + marker.locality + '<br>' + marker.description + '<br><a href=' + marker.website + ' target=blank>' + marker.website + '</a></div>');
           infowindow.open(map, marker);
           // Make sure the marker property is cleared if the infowindow is closed.
           infowindow.addListener('closeclick', function() {
