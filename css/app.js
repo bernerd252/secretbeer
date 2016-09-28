@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    
  	   $('select').material_select();
  	   $('.carousel').carousel();
  	//carousel nexts and previous movement methods.
@@ -22,7 +23,7 @@ $(document).ready(function(){
   };
   // initialize firebase
   firebase.initializeApp(config);
-
+  
    var database = firebase.database();
  var where = "";
  var cityState = "";
@@ -163,7 +164,7 @@ $(document).ready(function(){
         // Check to make sure the infowindow is not already opened on this marker.
         if (infowindow.marker != marker) {
           infowindow.marker = marker;
-          infowindow.setContent('<div><h5>' + marker.title + '</h5><br>' + marker.streetAddress + '<img src ="' + marker.label + '" class=icon></img><br>' + marker.locality + '<br>' + marker.description + '<br><a href=' + marker.website + ' target=blank>' + marker.website + '</a></div>');
+          infowindow.setContent('<div><h5 id="popupHeader">' + marker.title + '</h5><br><b>' + marker.streetAddress + '</b><img src ="' + marker.label + '" class=icon></img><br><b>' + marker.locality + '</b><br>' + marker.description + '<br><b><a href=' + marker.website + ' target=blank>' + marker.website + '</a></b></div>');
           infowindow.open(map, marker);
           // Make sure the marker property is cleared if the infowindow is closed.
           infowindow.addListener('closeclick', function() {
