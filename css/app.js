@@ -1,20 +1,20 @@
 $(document).ready(function(){
     
- 	   $('select').material_select();
- 	   $('.carousel').carousel();
- 	//carousel nexts and previous movement methods.
+     $('select').material_select();
+     $('.carousel').carousel();
+  //carousel nexts and previous movement methods.
      /*$('.carousel.carousel-slider').carousel({full_width: true});*/
 
     // Next slide
-	$('.carousel').carousel('next');
-	$('.carousel').carousel('next', 3); // Move next n times.
-	// Previous slide
-	$('.carousel').carousel('prev');
-	$('.carousel').carousel('prev', 4); // Move prev n times.
-	// Set to nth slide
-	$('.carousel').carousel('set', 4);
-	//firebase data
-	 var config = {
+  $('.carousel').carousel('next');
+  $('.carousel').carousel('next', 3); // Move next n times.
+  // Previous slide
+  $('.carousel').carousel('prev');
+  $('.carousel').carousel('prev', 4); // Move prev n times.
+  // Set to nth slide
+  $('.carousel').carousel('set', 4);
+  //firebase data
+   var config = {
     apiKey: "AIzaSyBTKzJTmrtTbwJeS_V4sryVrYfHS1gIpP4",
     authDomain: "beer-d9b34.firebaseapp.com",
     databaseURL: "https://beer-d9b34.firebaseio.com",
@@ -42,7 +42,7 @@ $(document).ready(function(){
  // what happens when you click on the submit button
   $("#clickButton").on("click", function(){
    where = $("#whereInput").val().trim();
-   var queryURL = "https://crossorigin.me/http://api.brewerydb.com/v2/locations/?key=df96c11767682fe9178fde3cedaa19f3&" + cityState + "=" + where
+   var queryURL = "https://crossorigin.me/http://api.brewerydb.com/v2/locations/?key=9bebc0cee0d006506782667a99991706&" + cityState + "=" + where
    // console.log("where " + where)
    // console.log("cityState " + cityState)
   database.ref().push({
@@ -76,7 +76,7 @@ $(document).ready(function(){
         // Constructor creates a new map - only center and zoom are required.
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 40.7413549, lng: -73.9980244},
-          zoom: 13,
+          zoom: 8,
           mapTypeControl: false
         });
         // These are the real estate listings that will be shown to the user.
@@ -229,10 +229,4 @@ $(document).ready(function(){
     
   });
 });
-});
 
-     
-
-
-
-    

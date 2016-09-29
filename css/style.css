@@ -25,12 +25,14 @@ h4 {
 }*/
 
 .card-panel {
-	background-image: url(http://en.academic.ru/pictures/enwiki/50/2009-03-21_Beer_brewing_bubbles.jpg);
 	font-family: Sigmar One;
 	height: 100px;
 	
 
 
+}
+.side-nav {
+	box-shadow: 0px;
 }
 
 
