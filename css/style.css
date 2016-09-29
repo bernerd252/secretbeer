@@ -24,12 +24,14 @@ h4 {
 }*/
 
 .card-panel {
-	background-image: url(http://en.academic.ru/pictures/enwiki/50/2009-03-21_Beer_brewing_bubbles.jpg);
 	font-family: Sigmar One;
 	height: 100px;
 	
 
 
+}
+.side-nav {
+	box-shadow: 0px;
 }
 
 
@@ -91,4 +93,5 @@ h4 {
 .page-footer {
 	background-image: url(http://nebula.wsimg.com/fd71b1ae8d8dea4d63169e0d7a3b779d?AccessKeyId=0E82C126178EA5ED2D1B&disposition=0&alloworigin=1);
 	background-size: 100%;
+	
 }
