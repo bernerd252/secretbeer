@@ -1,61 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hoplivion</title>
-  <!-- reset link -->
-  <link rel="stylesheet" href="">
-  <!-- style link -->
-  <link rel="stylesheet" href="css/style.css">
-  <!-- jquery -->
-  <script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
-  <!-- firebase -->
-    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
-  <!-- materialize -->
-  <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+	<meta charset="UTF-8">
+	<title>Hoplivion</title>
+	<!-- reset link -->
+	<link rel="stylesheet" href="">
+	<!-- style link -->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- jquery -->
+	<script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+	<!-- firebase -->
+  	<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+	<!-- materialize -->
+	<!-- Compiled and minified CSS -->
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-    <!-- material icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- viewport -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <!-- Google font  -->
-  <link rel="stylesheet" type="text/css"
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+  	<!-- material icons -->
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<!-- Google font  -->
+	<link rel="stylesheet" type="text/css"
           href="https://fonts.googleapis.com/css?family=Tangerine|Modak|Sigmar One">
     </head>
 <body>
+	<nav class="card-panel teal header">
+	    <div class="nav-wrapper" id="headwraper">
+	      <a href="#" class="brand-logo" style="color: #471f0a">HoPLIvIoN
+	     </a>
+	      <ul id="nav-mobile" class="right hide-on-med-and-down">
+	        <li><a href="about.html" style="color: #471f0a">About</a></li>
+	        
+	      </ul>
+	    </div>
+	</nav>
+	<!-- carousel -->
+	<div class="container">
+		<div class="carousel">
+		    <a class="carousel-item" href="#one!"><img class="img" src="http://www.iopp.org/images/IoPPNE-PIX/hp-featured-image.png"></a>
+		    <a class="carousel-item" href="#two!"><img class="img" src="http://www.chefalfredos.com/wp-content/uploads/2015/07/stellaartois-1.png"></a>
+		    <a class="carousel-item" href="#three!"><img class="img" src="https://cdn.pastemagazine.com/www/blogs/lists/BW_beer_glass_large.png"></a>
+		    <a class="carousel-item" href="#four!"><img class="img" src="http://worldartsme.com/images/blue-moon-beer-clipart-1.jpg"></a>
+		    <a class="carousel-item" href="#five!"><img class="img" src="http://www.brauunion.at/images/resized/assets/fileupload/biersorten/heineken%2Bglas_03_196x400.png"></a>
+	  	</div><br>
+		<div id="map">
 
-  <nav class="card-panel teal transparent header">
-      <div class="nav-wrapper" id="headwraper">
-        <a href="#" class="brand-logo" style="color: #471f0a">HoPLIvIoN
-       </a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="sass.html" style="color: #471f0a">About</a></li>
-          <li><a href="badges.html" style="color: #471f0a">Contact Us!</a></li>
-        </ul>
-      </div>
-  </nav>
-  <!-- carousel -->
-  <div class="container">
-    <div class="carousel">
-        <a class="carousel-item" href="#one!"><img class="img" src="http://www.iopp.org/images/IoPPNE-PIX/hp-featured-image.png"></a>
-        <a class="carousel-item" href="#two!"><img class="img" src="http://www.chefalfredos.com/wp-content/uploads/2015/07/stellaartois-1.png"></a>
-        <a class="carousel-item" href="#three!"><img class="img" src="https://cdn.pastemagazine.com/www/blogs/lists/BW_beer_glass_large.png"></a>
-        <a class="carousel-item" href="#four!"><img class="img" src="http://worldartsme.com/images/blue-moon-beer-clipart-1.jpg"></a>
-        <a class="carousel-item" href="#five!"><img class="img" src="http://www.brauunion.at/images/resized/assets/fileupload/biersorten/heineken%2Bglas_03_196x400.png"></a>
-      </div><br>
-    <div id="map">
-
-      <!-- this is where the map gets dumped -->
-    </div> 
-    <div>
-      <input id="show-listings" type="button" value="Show Listings">
-      <input id="hide-listings" type="button" value="Hide Listings">
-    </div>
-    <!-- First Input Fields -->
-    <div class="row">
-
+			<!-- this is where the map gets dumped -->
+		</div> 
+<div>
+          <input id="show-listings" type="button" value="Show Listings" class = "btn waves-effect waves-light amber accent-4">
+          <input id="hide-listings" type="button" value="Hide Listings" class = "btn waves-effect waves-light amber accent-4">
+        </div>
+		<!-- First Input Fields -->
+		<div class="row">
       <div class="col s6">
        <label><h4 id = "whiteHeader">Find the nearest brewery!</h4></label>
       </div>
@@ -67,12 +65,15 @@
             <button type="button" class="cityStateInput btn waves-effect waves-light amber accent-4" value = "region">ByState</button>      
           
         </div>
-
-      </div><br>
+       
+                   
+            
+          
+      </div>
 
    
 <!-- 
-    <div class="form-group">
+		<div class="form-group">
            <label for="cityState">city/state?</label>
           <input type="text" class="form-control" id="cityStateInput" aria-describedby="cityStateHelp" placeholder="cityState">
         </div>
@@ -81,10 +82,18 @@
           <input type="text" class="form-control" id="whereInput" aria-describedby="whereHelp" placeholder="where">
         </div> -->
 
-        
-    </div><!-- End of Container -->
+  
+  
 
-<br><footer class="page-footer">
+  
+
+
+       
+	       
+	   		
+		</div><!-- End of Container -->
+
+<footer class="page-footer">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
@@ -108,7 +117,7 @@
             </div>
           </div>
         </footer>
-  
+	
 
 <!-- Javascript -->
 <script src="css/app.js"></script>
@@ -124,13 +133,13 @@
         "https://maps.googleapis.com/maps/api/js?key=AIzaSyAF1z4D8_qAlnNA6PDoT8UrYOjhajWyP1Y">
     </script>
 
-  
+	
 
 
 
 
 
 
-  
+	
 </body>
 </html>
