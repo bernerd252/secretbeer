@@ -34,7 +34,7 @@ $(document).ready(function(){
  $(".cityStateInput").on("click", function(){
   cityState = (this.value)
   console.log("cityState " + cityState)
-  $(".input-field").html('<nav><div class="nav-wrapper"><form><div class="input-field bycity"><input id="whereInput" type="search" required class="yellow"><label for="search"><i class="material-icons">search</i></label><i class="material-icons">close</i></div><button type="submit" class="btn blue" id="clickButton">Submit</button><button type="submit" class="btn blue" id="searchAgainButton">Search Again?</button></form></div></nav>')
+  $(".input-field").html('<nav><div class="nav-wrapper"><form><div class="input-field bycity"><input id="whereInput" type="search" required class="yellow"><label for="search"><i class="material-icons">search</i></label><i class="material-icons">close</i></div><button type="submit" class="btn waves-effect waves-light amber accent-4" id="clickButton">Submit</button><button type="submit" class="btn waves-effect waves-light amber accent-4" id="searchAgainButton">Search Again?</button></form></div></nav>')
  
 
 
@@ -121,12 +121,12 @@ $(document).ready(function(){
           // console.log("street " + streetAddress)
           var locality = response.data[i].locality
           var website = response.data[i].brewery.website;
-         var label;
-          if (response.data[i].brewery.images.icon == undefined) {
-            label = "http://www.truebeer.com/assets/images/European-Beer-Mug-1.jpg"
-          }
-           else {
-            var label = response.data[i].brewery.images.icon;}
+         // var label;
+         //  if (response.data[i].brewery.images.icon == undefined) {
+         //    label = "http://www.truebeer.com/assets/images/European-Beer-Mug-1.jpg"
+         //  }
+         //   else {
+         //    var label = response.data[i].brewery.images.icon;}
           // console.log(label)
       
       // change latParse and lngParse into latitude and longitude cocordinates that google maps can understand
@@ -143,7 +143,7 @@ $(document).ready(function(){
             locality: locality,
             website: website,
             description: description,
-            label: label
+            // label: label
 
             // streetAddress: streetAddress
           });
