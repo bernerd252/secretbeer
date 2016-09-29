@@ -84,7 +84,7 @@ $(document).ready(function(){
         
         var lats = [];
         var lngs = [];
-        console.log("length " + response.data.length)
+        // console.log("length " + response.data.length)
         for (x=0;x<response.data.length;x++){
         var lat = response.data[x].latitude
         var lng = response.data[x].longitude
@@ -121,12 +121,15 @@ $(document).ready(function(){
           // console.log("street " + streetAddress)
           var locality = response.data[i].locality
           var website = response.data[i].brewery.website;
-         // var label;
-         //  if (response.data[i].brewery.images.icon == undefined) {
-         //    label = "http://www.truebeer.com/assets/images/European-Beer-Mug-1.jpg"
-         //  }
-         //   else {
-         //    var label = response.data[i].brewery.images.icon;}
+         var label;
+
+          if (response.data[i].brewery.images === undefined) {
+            label = "https://smhttp-ssl-21049.nexcesscdn.net/media/catalog/product/cache/1/thumbnail/40x/9df78eab33525d08d6e5fb8d27136e95/s/p/spiegelau-beer-stein-glass-item-4991056.jpg"
+            console.log("test")
+          }
+           else {
+            var label = response.data[i].brewery.images.icon;
+            console.log("tst2")}
           // console.log(label)
       
       // change latParse and lngParse into latitude and longitude cocordinates that google maps can understand
@@ -143,7 +146,7 @@ $(document).ready(function(){
             locality: locality,
             website: website,
             description: description,
-            // label: label
+            label: label
 
             // streetAddress: streetAddress
           });
