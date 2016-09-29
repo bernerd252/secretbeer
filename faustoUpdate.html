@@ -25,7 +25,7 @@
           href="https://fonts.googleapis.com/css?family=Tangerine|Modak|Sigmar One">
     </head>
 <body>
-	<nav class="card-panel teal header">
+	<nav class="card-panel teal transparent header">
 	    <div class="nav-wrapper" id="headwraper">
 	      <a href="#" class="brand-logo" style="color: #471f0a">HoPLIvIoN
 	     </a>
@@ -44,54 +44,60 @@
 		    <a class="carousel-item" href="#four!"><img class="img" src="http://worldartsme.com/images/blue-moon-beer-clipart-1.jpg"></a>
 		    <a class="carousel-item" href="#five!"><img class="img" src="http://www.brauunion.at/images/resized/assets/fileupload/biersorten/heineken%2Bglas_03_196x400.png"></a>
 	  	</div><br>
-	</div>
+  <!-- </div> -->
 		<div id="map">
 			<!-- this is where the map gets dumped -->
 		</div> 
-	<div class="container">
-
+  <!-- <div class="container"> -->
+  <div class="row">
+    <div class="col s6">
+       <label><h4>Where's the Beer </h4></label>
+    </div>
+      <div class="col s6">
+        <label><h4>By City/State</h4></label>
+      </div><br>
+    </div> <!-- End of First Input fields -->
 		<!-- First Input Fields -->
-		<div class="row">
-		<div class="col s6">
-		   <label><h4>Select Bro!!</h4></label>
-		</div>
-			<div class="col s6">
-				<label><h4>By City</h4></label>
-			</div>
-		</div> <!-- End of First Input fields -->
-		<div class="row"><!-- Start Second input Field -->
-			<div class="input-field col s6">
-			   	<select>
-			      <option value="" disabled selected>Options</option>
-			      <option value="1" id="region">By Region</option>
-			      <option value="2" id="city">By City</option>
-			      <option value="3" id="brand">By Brand</option>
-			    </select>
-		  	</div>
-			<div class="input-field col s6">
-	          	<nav>
-			    <div class="nav-wrapper">
-			      <form>
-			        <div class="input-field bycity">
-			          <input id="cityinput" type="search" required class="yellow">
-			          <label for="search"><i class="material-icons">search</i></label>
-			          <i class="material-icons">close</i>
-			        </div>
-			      </form>
-			    </div>
-			  	</nav>
+    <div class="row"><!-- Start Second input Field -->
+      <div class="input-field col s6">
+          <select>
+            <option value="" disabled selected>Select</option>
+            <option value="region" class="cityStateInput">By State</option>
+            <option value="locality" class="cityStateInput">By City</option>
+            <!-- <option value="3" id="brand">By Brand</option> -->
+          </select>
+        </div>
+      <div class="input-field col s6">
+              <nav>
+          <div class="nav-wrapper">
+            <form>
+              <div class="input-field bycity">
+                <input id="whereInput" type="search" required class="yellow">
+                <label for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+              </div>
+            </form>
+          </div>
+          </nav>
 
-	        </div>
-	     </div><!-- End of Second Input Row -->
-	        <div class="row"><!-- Submit Button -->
-	        	<div class="col">
-		        	<button class="btn waves-effect waves-light amber accent-4 submit" type="submit" name="action">Submit
-						<i class="material-icons right">send</i>
-					</button>
-				</div>
-	        </div><!-- End Submit Button -->
-		</div><!-- End of Container -->
-<footer class="page-footer">
+          </div>
+       </div><!-- End of Second Input Row -->
+		
+
+  
+  <button type="submit" class="btn blue" id="clickButton">Submit</button>
+
+  
+
+
+        <div>
+          <input id="show-listings" type="button" value="Show Listings">
+          <input id="hide-listings" type="button" value="Hide Listings">
+        </div>
+      </div>
+        </div><!-- End of Container -->
+	       
+	   		<footer class="page-footer">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
@@ -108,6 +114,7 @@
               </div>
             </div>
           </div>
+
           <div class="footer-copyright">
             <div class="container">
             © 2016 Copyright E.L.F
@@ -115,13 +122,13 @@
             </div>
           </div>
         </footer>
-            
 		
+
 
 	
 
 <!-- Javascript -->
-<script src="css/app2.js"></script>
+<script src="css/app.js"></script>
 
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
 <!-- google api -->
