@@ -34,7 +34,7 @@ $(document).ready(function(){
  $(".cityStateInput").on("click", function(){
   cityState = (this.value)
   console.log("cityState " + cityState)
-  $(".input-field").html('<nav><div class="nav-wrapper"><form><div class="input-field bycity"><input id="whereInput" type="search" required class="yellow"><label for="search"><i class="material-icons">search</i></label><i class="material-icons">close</i></div><button type="submit" class="btn waves-effect waves-light amber accent-4" id="clickButton">Submit</button><button type="submit" class="btn waves-effect waves-light amber accent-4" id="searchAgainButton">Search Again?</button></form></div></nav>')
+  $(".input-field").html('<nav><div class="nav-wrapper"><form><div class="input-field bycity"><input id="whereInput" type="search" required class="yellow"><label for="search"><i class="material-icons">search</i></label><i class="material-icons">close</i></div><button type="submit" class="btn waves-effect waves-light amber accent-4" id="clickButton">Submit</button><button type="submit" class="btn waves-effect waves-light amber accent-4" id="searchAgainButton"><a href = "index.html">Search Again?</a></button></form></div></nav>')
  
 
 
@@ -54,11 +54,11 @@ $(document).ready(function(){
   return false;
   });
 
-  $("#searchAgainButton").on("click", function(){
-    $(".input-field").html('<button type="button" class="cityStateInput" value = "locality">By City</button><button type="button" class="cityStateInput" value = "region">ByState</button>')
-  })
+//   $("#searchAgainButton").on("click", function(){
+//     $(".input-field").html('<button type="button" class="cityStateInput btn waves-effect waves-light amber accent-4" value = "locality">By City</button><button type="button" class="cityStateInput btn waves-effect waves-light amber accent-4" value = "region">ByState</button>')
+//   })
 
-});
+// });
  database.ref().on("child_added", function(childSnapshot) {
   // console.log(childSnapshot.val().queryURL);
  
@@ -225,6 +225,7 @@ $(document).ready(function(){
 //         console.log("a " + a)
     
   });
+});
 });
 
      
