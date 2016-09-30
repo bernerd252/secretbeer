@@ -244,5 +244,5 @@ var userLngParse = parseFloat(userLng)
     
   });
 });
-});
+}
 });
