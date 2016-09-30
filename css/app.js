@@ -91,7 +91,7 @@ var userLngParse = parseFloat(userLng)
         // Constructor creates a new map - only center and zoom are required.
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: userLatParse, lng:userLngParse},
-          zoom: 8,
+          zoom: 13,
           mapTypeControl: false
         });
         // These are the real estate listings that will be shown to the user.
