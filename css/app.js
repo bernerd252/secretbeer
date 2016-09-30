@@ -1,5 +1,20 @@
 $(document).ready(function(){
     
+    var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+ var userLat  = position.coords.latitude 
+  var userLng =   position.coords.longitude;
+var userLatParse = parseFloat(userLat)
+var userLngParse = parseFloat(userLng)
+    
      $('select').material_select();
      $('.carousel').carousel();
   //carousel nexts and previous movement methods.
@@ -75,7 +90,7 @@ $(document).ready(function(){
         
         // Constructor creates a new map - only center and zoom are required.
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 40.7413549, lng: -73.9980244},
+          center: {lat: userLatParse, lng:userLngParse},
           zoom: 8,
           mapTypeControl: false
         });
