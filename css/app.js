@@ -9,12 +9,12 @@ $(document).ready(function(){
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
 
-
+function showPosition (position) {
  var userLat  = position.coords.latitude 
   var userLng =   position.coords.longitude;
 var userLatParse = parseFloat(userLat)
 var userLngParse = parseFloat(userLng)
-    
+
      $('select').material_select();
      $('.carousel').carousel();
   //carousel nexts and previous movement methods.
@@ -245,4 +245,4 @@ var userLngParse = parseFloat(userLng)
   });
 });
 });
-
+}
