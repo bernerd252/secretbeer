@@ -58,6 +58,7 @@ var userLngParse = parseFloat(userLng)
   $("#clickButton").on("click", function(){
    where = $("#whereInput").val().trim();
    var queryURL = "https://crossorigin.me/http://api.brewerydb.com/v2/locations/?key=9bebc0cee0d006506782667a99991706&" + cityState + "=" + where
+   var bounds = new google.maps.LatLngBounds();
    // console.log("where " + where)
    // console.log("cityState " + cityState)
   database.ref().push({
